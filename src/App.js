@@ -98,6 +98,28 @@ function App() {
 
 
 
+  //Back Functions
+  const Back = () => {
+    setPosts(null)
+    setShUsers(true)
+  }
+
+  const Back2 = () => {
+    setComments(null)
+    setShPosts(true)
+  }
+
+  const Back3 = () => {
+    setAlbums(null)
+    setShUsers(true)
+  }
+
+  const Back4 = () => {
+    setPhotos(null)
+    setShAlbums(true)
+  }
+
+
   return (
     <div className='w3-content w3-panel'>
       <h1 className='w3-opacity w3-center'>Fake API 2.0</h1>
@@ -111,7 +133,7 @@ function App() {
         <>
 
         <div className='w3-center w3-padding'>
-          <button className='w3-button w3-border w3-red w3-hover-green w3-round'>Back</button>
+          <button className='w3-button w3-border w3-red w3-hover-green w3-round' onClick={Back}>Back</button>
         </div>
 
         {
@@ -127,7 +149,7 @@ function App() {
         comments &&
         <>
         <div className='w3-center w3-padding'>
-          <button className='w3-button w3-border w3-red w3-hover-green w3-round'>Back</button>
+          <button className='w3-button w3-border w3-red w3-hover-green w3-round' onClick={Back2}>Back</button>
         </div>
         {
           comments.map((comment)=><Comments key={comment['id']} name={comment['name']} body={comment['body']} email={comment['email']}/>)
@@ -141,7 +163,7 @@ function App() {
         shAlbums && albums &&
         <>
         <div className='w3-center w3-padding'>
-          <button className='w3-button w3-border w3-red w3-hover-green w3-round'>Back</button>
+          <button className='w3-button w3-border w3-red w3-hover-green w3-round' onClick={Back3}>Back</button>
         </div>
         {
           albums.map((album)=><Album key={album['id']} id={album['id']} title={album['title']} viewPhotos={viewPhotos}/>)
@@ -156,10 +178,10 @@ function App() {
          photos &&
         <>
         <div className='w3-center w3-padding'>
-          <button className='w3-button w3-border w3-red w3-hover-green w3-round'>Back</button>
+          <button className='w3-button w3-border w3-red w3-hover-green w3-round' onClick={Back4}>Back</button>
         </div>
         {
-          photos.map((photo)=><Photo key={photo['id']} title={photo['title']} url={photo['url']} thumbnail={photo['thumbnail']} />)
+          photos.map((photo)=><Photo key={photo['id']} title={photo['title']} thumbnailUrl={photo['thumbnailUrl']} />)
         }
         </>
         
